@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AIMS CLUSTER SERVER V2.786</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    function barquito(){
+var empresas = ["Husqvarna","Pramac","CEMEX","Kipor","Hyundai","BCS","Bosch","Murray","Master Climate","Hitachi","Faraone","Makita","Solter","SIMA","MG","Benza","kaiser", "Swiss Tools", "Perkins", "Cummins"];
+var puertos = ["Shanghai","Singapore","Shenzhen","Ningbo-Zhoushan","Hong Kong","Busan","Guangzhou","Qingdao","Dubai","Tianjin","Rotterdam","Port Klang","Kaohsiung","Antwerp","Dalian","Xiamen","Tanjung Pelepas","Hamburg","Yingkou","Ho Chi Minh City","Bremen/Bremerhaven","Tokyo","Valencia","Algeciras","Jawaharlal Nehru","Felixstowe","Manila","Santos","Colon","Marsaxlokk","Vancouver","Genoa","Ambarli"];
+var codtracking =[];
+var contadorletra=0;
+var contador = 0;
+
+do{
+  numempresa = Math.floor(Math.random() * (empresas.length)+0);
+  empresasel = empresas[numempresa];
+  salida = Math.floor(Math.random() * (puertos.length)+0);
+  puertosalida = puertos[salida];
+  do{
+  destino = Math.floor(Math.random() * (puertos.length)+0);
+  }
+  while(destino==salida);
+  puertodestino = puertos[destino];
+  numerotracking = Math.floor((Math.random() * 10000) + 1000);
+  letratracking = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  do{
+  inicialestracking = Math.floor(Math.random() * (letratracking.length)+0);
+  codtracking.push(letratracking[inicialestracking]);
+  contadorletra ++;
+  }
+  while(contadorletra<3);
+  var lineaenvio='<p class="lineaenvio">CAPTURED! CODETRACKING: '+codtracking[0]+codtracking[1]+codtracking[2]+numerotracking+' '+empresasel+' FROM '+puertosalida+' TO '+puertodestino+'</p>';
+  contadorletra=0;
+  codtracking=[];
+  //var lineanueva = document.getElementById('envbarcos');
+  //lineanueva.insertAdjacentHTML('beforeend',lineaenvio);
+  var lineanueva = 'barco'+contador;
+  var barconuevo = document.getElementById(lineanueva).innerHTML=lineaenvio;
+  contador ++;
+}while(contador<9);
+  
+}
+window.setInterval(function(){
+
+barquito()
+}, 5000);
+  </script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7" style="background-color:white;">
+<!--<iframe width="1080" height="800" src="https://armsglobe.chromeexperiments.com/"></iframe>-->
+<iframe id="barcos" width="1250" height="800" src="https://www.shipmap.org/"></iframe>
+<frame>
+<div id="envbarcos1">
+  <p id="barco0"></p>
+  <p id="barco1"></p>
+  <p id="barco2"></p>
+  <p id="barco3"></p>
+  <p id="barco4"></p>
+  <p id="barco5"></p>
+  <p id="barco6"></p>
+  <p id="barco7"></p>
+  <p id="barco8"></p>
+  <p id="barco9"></p>
+</div>
+</frame>
+<script>
+if (document.addEventListener){
+        document.addEventListener("DOMContentLoaded", barquito, false);
+      }
+</script>
+    </div>
+    <div class="col-md-5" id="mapa" style="background-color:white;">
+        <!-- TradingView Widget BEGIN -->
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget({
+  "autosize": false,
+  "symbol": "NASDAQ:AAPL",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "Light",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "details": true,
+  "calendar": true,
+  "hideideasbutton": false,
+});
+</script>
+<iframe id='kasp' width="800" height="580" src="https://cybermap.kaspersky.com/es/widget/dynamic/dark" frameborder="0"></iframe>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

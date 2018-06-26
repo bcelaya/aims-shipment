@@ -1,0 +1,49 @@
+
+
+#footer {
+    display: none;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #19241E;
+    z-index: 25;
+    background-color: #050907;
+    height: 50px;
+}
+#footer_social_channels {
+    float: right;
+    height: 100%;
+    line-height: 50px;
+    color: #848484;
+    padding: 0 5px;
+    font-size: 11px;
+    display: none;
+}
+h1 {
+	font-size: 2.5em;
+	font-weight: bolder;
+
+}
+#tapa {
+    width: 930px;
+    height: 50px;
+    z-index: 10;
+    background-color: white;
+    position: absolute;
+    top: 99px;
+    right: 485px;
+}
+#tradingview-copyright{
+    display: none;
+}
+#tradingview_17c10{
+height: 400px;
+}
+#tradingview_deb64{
+height: 400px !important;
+}
+#timestamp{
+display:none;
+}
+.result {
+    display: none !important;
+}
